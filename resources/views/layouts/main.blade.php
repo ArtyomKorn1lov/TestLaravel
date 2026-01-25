@@ -15,7 +15,7 @@
     <div class="wrapper">
         <header class="header @yield('header_wrapper_class')">
             <div class="header__container @yield('header_container_class')">
-                <x-menu />
+                <x-general::menu />
                 @yield('header_primary_banner')
             </div>
             @yield('header_secondary_banner')
@@ -25,9 +25,9 @@
         </div>
         <footer class="footer">
             <div class="footer__container">
-                <x-banner type="footer" />
+                <x-general::banner type="footer" />
                 <div class="prolog">
-                    <x-short-contacts-info />
+                    <x-contacts::short-contacts-info />
                     <div class="righ-reserved-container regular-text_opacity">
                         <p class="regular-text">{{ date('Y') }} © All rights reserved.</p>
                     </div>

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\View\Components;
+namespace App\Modules\General\View\Components;
 
-use App\Enums\BannerType;
+use App\Modules\General\Enums\BannerType;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 

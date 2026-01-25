@@ -6,15 +6,15 @@
 @section('header_container_class', 'header__container_contacts')
 
 @section('header_secondary_banner')
-    <x-banner type="contacts" />
+    <x-general::banner type="contacts" />
 @endsection
 
 @section('page_wrapper_class', 'page_contacts')
 
 @section('content')
     <div class="contacts">
-        <x-contacts-info />
-        <x-send-us-feedback />
+        <x-contacts::contacts-info />
+        <x-contacts::send-us-feedback />
     </div>
-    <x-contacts-map />
+    <x-contacts::contacts-map />
 @endsection
