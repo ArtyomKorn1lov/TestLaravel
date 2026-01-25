@@ -1,0 +1,119 @@
+a:not(.primary-button):not(.secondary-button):not(.learn-more):hover,
+a:not(.primary-button):not(.secondary-button):not(.learn-more):active {
+    color: #5A98D0;
+}
+
+.regular-text {
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.large-header {
+    width: 510px;
+    font-size: 64px;
+    line-height: 74px;
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+
+.big-header {
+    font-weight: 500;
+    font-size: 44px;
+    text-align: center;
+}
+
+.medium-header {
+    font-size: 36px;
+    line-height: 46px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.small-header {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.small-header_what-we-do {
+    margin-bottom: 14px;
+}
+
+.learn-more {
+    color: #5A98D0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    transition: none;
+}
+
+.learn-more:hover,
+.learn-more:active {
+    color: #1F3F68;
+}
+
+.learn-more::after {
+    content: url("../assets/Vector.svg");
+    width: 15.12px;
+    height: 14.63px;
+    margin-left: 24px;
+}
+
+.learn-more:hover::after,
+.learn-more:active::after {
+    content: url("../assets/Vector_active.svg");
+}
+
+.our-finished-project .regular-text {
+    color: #222222;
+    margin-bottom: 64px;
+}
+
+.our-finished-project__text {
+    position: absolute;
+    top: 64px;
+    right: 64px;
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 46px;
+    letter-spacing: 5%;
+}
+
+.our-finished-project__text_left {
+    top: 32px;
+    left: 32px;
+}
+
+.header__contact-banner .big-header {
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+.header__contact-banner .regular-text {
+    text-align: center;
+    max-width: 780px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.uppercase-text {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.c-phones__link {
+    color: #1F3F68;
+    font-weight: 300;
+    line-height: 26px;
+    opacity: 0.6;
+}
+
+.online-services__link {
+    color: #1F3F68;
+    font-weight: 300;
+    line-height: 26px;
+    opacity: 0.6;
+}

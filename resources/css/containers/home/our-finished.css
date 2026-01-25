@@ -1,0 +1,55 @@
+.our-finished-project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1140px;
+    padding-top: 15px;
+}
+
+.our-finished-project .medium-header, 
+.our-finished-project  .regular-text {
+    text-align: center;
+    max-width: 750px;
+}
+
+.our-finished-project .medium-header + .regular-text {
+    margin-top: 32px;
+}
+
+.our-finished-project__block {
+    width: 100%;
+    position: relative;
+}
+
+.our-finished-project__block_small {
+    max-width: 554px;
+}
+
+.our-finished-project__block_small + .our-finished-project__block_small {
+    margin-left: 32px;
+}
+
+.our-finished-project__image {
+    filter: brightness(60%);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: filter 0.6s;
+}
+
+.our-finished-project__image:hover,
+.our-finished-project__image:active {
+    filter: none;
+}
+
+.our-finished-project__group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.our-finished-project__block + .our-finished-project__group {
+    margin-top: 32px;
+}

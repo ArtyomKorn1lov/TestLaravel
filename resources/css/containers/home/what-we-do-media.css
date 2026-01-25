@@ -1,0 +1,11 @@
+@media (max-width: 400px) {
+    .what-we-do-list__element {
+        width: 250px;
+    }
+}
+
+@media (max-width: 360px) {
+    .what-we-do-list__element {
+        width: 220px;
+    }
+}

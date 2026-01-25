@@ -1,0 +1,71 @@
+.contacts__form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 540px;
+    padding: 56px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 50px 0px rgba(16, 112, 177, 0.2);
+    background: #FFFFFF;
+}
+
+.form__body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form .small-header {
+    margin-bottom: 48px;
+}
+
+.form textarea {
+    resize: none;
+}
+
+.result-group {
+    display: none;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.result-group__title {
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 26px;
+    color: #5A98D0;
+}
+
+.result-group__item {
+    display: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #1F3F68;
+    margin-bottom: 5px;
+}
+
+.result-group__item::before {
+    content: "Data: ";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #5A98D0;
+    margin-right: 10px;
+}
+
+.result-group__item_name::before {
+    content: "Full Name: ";
+}
+
+.result-group__item_email::before {
+    content: "Email: ";
+}
+
+.result-group__item_message::before {
+    content: "Message: ";
+}
