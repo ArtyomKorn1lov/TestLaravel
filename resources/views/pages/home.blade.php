@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main', ['assets' => ['resources/css/pages/home.css']])
 
 @section('title', 'New Automation Tool for Your')
 

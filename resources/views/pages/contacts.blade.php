@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main', ['assets' => ['resources/css/pages/contacts.css']])
 
 @section('title', 'Contact Us')
 
