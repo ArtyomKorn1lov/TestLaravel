@@ -11,6 +11,20 @@
 
 @section('page_wrapper_class', 'page_contacts')
 
+@php
+/*use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\File;
+
+$path = base_path('test-file.txt');
+echo '<pre>';
+var_export($path);
+echo '</pre>';
+$result = Storage::disk('public')->put('/', new File($path));
+echo '<pre>';
+var_export($result);
+echo '</pre>';*/
+@endphp
+
 @section('content')
     <div class="contacts">
         <x-contacts::contacts-info />

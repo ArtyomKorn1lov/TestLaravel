@@ -8,6 +8,9 @@ use Illuminate\View\Component;
 
 class Banner extends Component
 {
+    /**
+     * @param string $type
+     */
     public function __construct(
         public string $type = BannerType::home->value
     )

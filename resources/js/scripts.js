@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    console.log(event);
+document.addEventListener("DOMContentLoaded", function() {
     const urlParams = new URLSearchParams(window.location.search);
     const nameValue = urlParams.get('name');
     const emailValue = urlParams.get('email');

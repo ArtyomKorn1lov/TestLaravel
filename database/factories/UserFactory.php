@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
+use App\Core\ORM\User;
+
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Core\Models\User>
+ * @extends Factory<User>
  */
 class UserFactory extends Factory
 {

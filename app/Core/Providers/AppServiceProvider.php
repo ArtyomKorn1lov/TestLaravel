@@ -2,6 +2,8 @@
 
 namespace App\Core\Providers;
 
+use App\Core\Services\JsonService;
+use App\Core\Services\JsonServiceInterface;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
 
@@ -12,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(JsonServiceInterface::class, JsonService::class);
     }
 
     /**
