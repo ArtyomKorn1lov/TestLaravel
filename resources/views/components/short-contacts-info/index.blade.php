@@ -1,7 +1,38 @@
+@php
+    use App\Modules\Contacts\Enums\ContactTypes;
+
+    if (empty($contacts)) {
+        return;
+    }
+@endphp
 <ul class="footer-contacts">
-    <li class="footer-contacts__element">
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-    </li>
-    <li class="footer-contacts__element footer-contacts__element_tel"><a href="tel:79088888888" title="+7(908)-888-88-88">+7(908)-888-88-88</a></li>
-    <li class="footer-contacts__element footer-contacts__element_mail"><a href="mailto:mail@mail.ru" title="mail@mail.ru">mail@mail.ru</a></li>
+    @foreach($contacts as $item)
+        @switch($item['type'])
+            @case(ContactTypes::phone->value)
+                @php
+                    $label = empty($item['label']) ? $item['value'] : $item['label'];
+                @endphp
+                <li class="footer-contacts__element footer-contacts__element_tel">
+                    <a href="tel:{{ $item['value'] }}" title="{{ $label }}">
+                        {{ $label }}
+                    </a>
+                </li>
+                @break
+            @case(ContactTypes::email->value)
+                @php
+                    $label = empty($item['label']) ? $item['value'] : $item['label'];
+                @endphp
+                <li class="footer-contacts__element footer-contacts__element_mail">
+                    <a href="mailto:{{ $item['value'] }}" title="{{ $label }}">
+                        {{ $label }}
+                    </a>
+                </li>
+                @break
+            @default
+                <li class="footer-contacts__element">
+                    <span>{{ $item['value'] }}</span>
+                </li>
+                @break
+        @endswitch
+    @endforeach
 </ul>

@@ -23,7 +23,7 @@ class BannerSeeder extends AppSeeder
 
         foreach ($result['items'] as $item) {
             $orm = Banner::query()
-                ->where('code', $item['code'])
+                ->where('code', '=', $item['code'])
                 ->first();
 
             if (empty($orm)) {

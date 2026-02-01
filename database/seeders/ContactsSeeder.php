@@ -36,7 +36,7 @@ class ContactsSeeder extends AppSeeder
 
         foreach ($result['items'] as $item) {
             $orm = Contact::query()
-                ->where('code', $item['code'])
+                ->where('code', '=', $item['code'])
                 ->first();
 
             if (empty($orm)) {

@@ -25,7 +25,7 @@ class NewsSeeder extends AppSeeder
 
         foreach ($result['items'] as $item) {
             $orm = News::query()
-                ->where('code', $item['code'])
+                ->where('code', '=', $item['code'])
                 ->first();
 
             if (empty($orm)) {

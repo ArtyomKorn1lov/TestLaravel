@@ -24,7 +24,7 @@ class ProjectSeeder extends AppSeeder
 
         foreach ($result["items"] as $item) {
             $orm = Project::query()
-                ->where('code', $item['code'])
+                ->where('code', '=', $item['code'])
                 ->first();
 
             if (empty($orm)) {

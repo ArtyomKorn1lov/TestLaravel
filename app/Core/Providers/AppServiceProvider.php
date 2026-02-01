@@ -24,6 +24,5 @@ class AppServiceProvider extends ServiceProvider
     {
         Blade::componentNamespace('App\\Modules\\General\\View\\Components', 'general');
         Blade::componentNamespace('App\\Modules\\News\\View\\Components', 'news');
-        Blade::componentNamespace('App\\Modules\\Contacts\\View\\Components', 'contacts');
     }
 }
