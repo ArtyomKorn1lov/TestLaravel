@@ -15,8 +15,8 @@ return new class extends Migration {
             $table->string('code')->unique();
             $table->string('name');
             $table->text('description');
-            $table->foreignIdFor(Picture::class);
-            $table->foreignIdFor(Link::class);
+            $table->foreignIdFor(Picture::class)->nullable();
+            $table->foreignIdFor(Link::class)->nullable();
         });
     }
 

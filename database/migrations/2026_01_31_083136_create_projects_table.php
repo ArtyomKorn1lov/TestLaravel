@@ -12,7 +12,7 @@ return new class extends Migration {
             $table->id();
             $table->string('code')->unique();
             $table->string('name');
-            $table->foreignIdFor(Picture::class);
+            $table->foreignIdFor(Picture::class)->nullable();
             $table->boolean('is_primary');
         });
     }

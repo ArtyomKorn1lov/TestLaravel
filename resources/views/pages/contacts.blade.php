@@ -19,8 +19,8 @@ $path = base_path('test-file.txt');
 echo '<pre>';
 var_export($path);
 echo '</pre>';
-$result = Storage::disk('public')->put('/', new File($path));
-echo '<pre>';
+
+echo '<pre>';$result = Storage::disk('public')->put('/', new File($path));
 var_export($result);
 echo '</pre>';*/
 @endphp

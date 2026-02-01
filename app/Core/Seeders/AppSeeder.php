@@ -2,12 +2,13 @@
 
 namespace App\Core\Seeders;
 
-use App\Core\Services\JsonService;
+use App\Core\Services\JsonServiceInterface;
 use Exception;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\File;
+use Illuminate\Support\Facades\File as FacadesFile;
 
 abstract class AppSeeder extends Seeder
 {
@@ -19,10 +20,10 @@ abstract class AppSeeder extends Seeder
     protected const string RESOURCE_FOLDER_SUFFIX = '_resources';
 
     /**
-     * @param JsonService $jsonService
+     * @param JsonServiceInterface $jsonService
      */
     public function __construct(
-        protected JsonService $jsonService
+        protected JsonServiceInterface $jsonService
     )
     {
     }
@@ -40,7 +41,7 @@ abstract class AppSeeder extends Seeder
             throw new Exception('Неверное имя seeder\'a ');
         }
         return $this->jsonService->read(
-            path: base_path() . self::CONTENT_FOLDER_PATH . '/' . class_basename($name) . self::CONTENT_FILE_SUFFIX . '.' . $contentType
+            path: base_path() . self::CONTENT_FOLDER_PATH . class_basename($name) . self::CONTENT_FILE_SUFFIX . '.' . $contentType
         );
     }
 
@@ -58,12 +59,12 @@ abstract class AppSeeder extends Seeder
         $resourcePath =
             base_path()
             . self::CONTENT_FOLDER_PATH
-            . '/' . class_basename($name)
+            . class_basename($name)
             . self::RESOURCE_FOLDER_SUFFIX
             . '/' . $resourceName;
-        if (!Storage::exists($resourcePath)) {
+        if (!FacadesFile::exists($resourcePath)) {
             throw new Exception('Файла ' . $resourceName . ' по указанному пути ' . $resourcePath . ' не существует');
         }
-        return Storage::disk('public')->put('/uploads/', new File($resourcePath));
+        return Storage::disk('public')->put('/uploads', new File($resourcePath));
     }
 }

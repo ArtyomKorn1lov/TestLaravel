@@ -2,19 +2,21 @@
 
 namespace Database\Seeders;
 
-use App\Core\ORM\Picture;
 use App\Core\ORM\Link;
+use App\Core\ORM\Picture;
+use App\Modules\News\ORM\News;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Core\Seeders\AppSeeder;
-use App\Modules\General\ORM\Banner;
 use Exception;
 
-class BannerSeeder extends AppSeeder
+class NewsSeeder extends AppSeeder
 {
     use WithoutModelEvents;
 
     /**
      * Run the database seeds.
+     * @throws FileNotFoundException
      * @throws Exception
      */
     public function run(): void
@@ -22,12 +24,12 @@ class BannerSeeder extends AppSeeder
         $result = $this->readContentData(self::class);
 
         foreach ($result['items'] as $item) {
-            $orm = Banner::query()
+            $orm = News::query()
                 ->where('code', $item['code'])
                 ->first();
 
             if (empty($orm)) {
-                $orm = new Banner();
+                $orm = new News();
             }
 
             $orm->code = $item['code'];

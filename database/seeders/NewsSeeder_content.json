@@ -1,0 +1,25 @@
+{
+    "items": [
+        {
+            "code": "news-1",
+            "name": "Make Your business To Be Better Famous In Internet",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "picture": "what-we-do1.svg",
+            "link": "/"
+        },
+        {
+            "code": "news-2",
+            "name": "Bring Technology To Your Comfrotable Home",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "picture": "what-we-do2.svg",
+            "link": "/"
+        },
+        {
+            "code": "news-3",
+            "name": "Build Your Digital Product That Suitable For Your Need",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "picture": "what-we-do3.svg",
+            "link": "/"
+        }
+    ]
+}

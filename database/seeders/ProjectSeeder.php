@@ -3,43 +3,37 @@
 namespace Database\Seeders;
 
 use App\Core\ORM\Picture;
-use App\Core\ORM\Link;
+use App\Modules\News\ORM\Project;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Core\Seeders\AppSeeder;
-use App\Modules\General\ORM\Banner;
 use Exception;
 
-class BannerSeeder extends AppSeeder
+class ProjectSeeder extends AppSeeder
 {
     use WithoutModelEvents;
 
     /**
      * Run the database seeds.
+     * @throws FileNotFoundException
      * @throws Exception
      */
     public function run(): void
     {
         $result = $this->readContentData(self::class);
 
-        foreach ($result['items'] as $item) {
-            $orm = Banner::query()
+        foreach ($result["items"] as $item) {
+            $orm = Project::query()
                 ->where('code', $item['code'])
                 ->first();
 
             if (empty($orm)) {
-                $orm = new Banner();
+                $orm = new Project();
             }
 
             $orm->code = $item['code'];
             $orm->name = $item['name'];
-            $orm->description = $item['description'];
-
-            if (!empty($item['link'])) {
-                $link = new Link();
-                $link->url = $item['link'];
-                $link->save();
-                $orm->link()->associate($link);
-            }
+            $orm->is_primary = (bool)$item['is_primary'];
 
             if (!empty($item['picture'])) {
                 $fileName = $this->saveResource($item['picture'], self::class);
