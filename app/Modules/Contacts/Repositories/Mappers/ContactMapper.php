@@ -13,17 +13,12 @@ class ContactMapper
      * @param EloquentCollection<int, ContactOrm> $ormCollection
      * @return Collection<int, Contact>
      */
-    public static function ormCollectionToModelList(EloquentCollection $ormCollection): Collection
+    public static function ormToModelCollection(EloquentCollection $ormCollection): Collection
     {
-        /** @var Collection<int, Contact> $collection */
-        $collection = new Collection();
         if ($ormCollection->isEmpty()) {
-            return $collection;
+            return collect();
         }
-        foreach ($ormCollection as $item) {
-            $collection->push(self::ormToModel($item));
-        }
-        return $collection;
+        return $ormCollection->map(fn(ContactOrm $item) => self::ormToModel($item));
     }
 
     /**

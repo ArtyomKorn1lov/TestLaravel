@@ -17,7 +17,7 @@ class ContactsRepository implements ContactsRepositoryInterface
         $ormCollection = ContactOrm::query()
             ->orderBy('id')
             ->get();
-        return ContactMapper::ormCollectionToModelList($ormCollection);
+        return ContactMapper::ormToModelCollection($ormCollection);
     }
 
     public function findByFooter(): Collection
@@ -26,6 +26,6 @@ class ContactsRepository implements ContactsRepositoryInterface
             ->orderBy('id')
             ->where('show_footer', '=', true)
             ->get();
-        return ContactMapper::ormCollectionToModelList($ormCollection);
+        return ContactMapper::ormToModelCollection($ormCollection);
     }
 }

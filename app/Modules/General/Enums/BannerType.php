@@ -4,7 +4,7 @@ namespace App\Modules\General\Enums;
 
 enum BannerType: string
 {
-    case home = 'home';
+    case main = 'main';
     case contacts = 'contacts';
     case footer = 'footer';
 }
