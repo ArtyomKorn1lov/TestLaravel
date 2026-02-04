@@ -1,28 +1,41 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const nameValue = urlParams.get('name');
-    const emailValue = urlParams.get('email');
-    const messageValue = urlParams.get('message');
-    let elemResult = document.getElementById('formResults');
-    if (!!nameValue || !!emailValue || !!messageValue) {
-        elemResult.style.display = 'flex';
-    }
-    if (!!nameValue) {
-        let elem = document.getElementById('nameValue');
-        elem.style.display = 'inline-block';
-        elem.classList.add('result-group__item_name');
-        elem.innerHTML = nameValue;
-    }
-    if (!!emailValue) {
-        let elem = document.getElementById('emailValue');
-        elem.style.display = 'inline-block';
-        elem.classList.add('result-group__item_email');
-        elem.innerHTML = emailValue;
-    }
-    if (!!messageValue) {
-        let elem = document.getElementById('messageValue');
-        elem.style.display = 'inline-block';
-        elem.classList.add('result-group__item_message');
-        elem.innerHTML = messageValue;
-    }
+    const formRef = document.getElementById('contactsForm');
+
+    formRef.addEventListener('submit', async function (event)  {
+        event.preventDefault();
+
+        try {
+            const feedbackObj = {
+                'name': formRef.elements.name.value,
+                'email': formRef.elements.email.value,
+                'message': formRef.elements.message.value
+            };
+            const response = await fetch('/api/feedback', {
+                method: 'POST',
+                body: JSON.stringify(feedbackObj),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            const result = await response.json();
+            if (!response.ok) {
+                throw new Error(result?.message);
+            }
+
+            document.getElementById('formResults').style.display = 'flex';
+            let elem = document.getElementById('message');
+            elem.style.display = 'inline-block';
+            elem.classList.add('result-group__item_success');
+            elem.innerHTML = result?.message;
+
+            formRef.reset();
+        } catch (error) {
+            document.getElementById('formResults').style.display = 'flex';
+            let elem = document.getElementById('message');
+            elem.style.display = 'inline-block';
+            elem.classList.add('result-group__item_error');
+            elem.innerHTML = error?.message;
+        }
+    });
 });

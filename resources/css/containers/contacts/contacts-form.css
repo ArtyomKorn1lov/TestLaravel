@@ -58,14 +58,16 @@
     margin-right: 10px;
 }
 
-.result-group__item_name::before {
-    content: "Full Name: ";
+
+.result-group__item_success::before {
+    content: "Success: ";
 }
 
-.result-group__item_email::before {
-    content: "Email: ";
+.result-group__item_error,
+.result-group__item_error::before {
+    color: #df0a0a;
 }
 
-.result-group__item_message::before {
-    content: "Message: ";
+.result-group__item_error::before {
+    content: "Error: ";
 }
