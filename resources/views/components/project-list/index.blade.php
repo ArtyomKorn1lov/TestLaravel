@@ -28,7 +28,7 @@
                     href="#"
                     title="{{ $item['name'] }}"
                 >
-                    @if(!empty($item['picture'])))
+                    @if(!empty($item['picture']))
                         <img
                             class="our-finished-project__image"
                             src="{{ asset('storage/' . $item['picture']) }}"
