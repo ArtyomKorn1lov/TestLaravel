@@ -1,0 +1,97 @@
+/* Хедер сайта */
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 0 32px 0 32px;
+    background: linear-gradient(0.00deg, rgb(235, 243, 251) 8.836%, rgba(152, 195, 232, 0) 31.12%);
+}
+
+.header__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1140px;
+    width: 100%;
+    padding-top: 34px;
+    padding-bottom: 40px;
+}
+
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-menu__icon {
+    background-repeat: no-repeat;
+    transition: background-image 0.6s;
+}
+
+.home-icon {
+    width: 45.58px;
+    height: 48px;
+    background-image: url("../../assets/navigation.svg");
+}
+
+.home-icon:hover,
+.home-icon:active {
+    background-image: url("../../assets/navigation_active.svg");
+}
+
+.contacts-icon {
+    width: 33.46px;
+    height: 38px;
+    background-image: url("../../assets/address-book-solid.svg");
+}
+
+.contacts-icon:hover,
+.contacts-icon:active {
+    background-image: url("../../assets/address-book-solid_active.svg");
+}
+
+.home-banner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 107px;
+    padding-bottom: 53px;
+}
+
+.home-banner__text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 82px;
+}
+
+.home-banner__image {
+    object-fit: cover;
+    align-self: flex-end;
+    width: 554px;
+    height: 492px;
+}
+
+.regular-text_banner {
+    width: 425px;
+    opacity: 0.6;
+}
+
+.regular-text_banner + .primary-button {
+    margin-top: 72px;
+}
+
+.header_contacts {
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    padding: 0;
+}
+
+.header__contact-banner {
+    width: 100%;
+    padding: 50px 0;
+    background-image: url("../../assets/contact-banner.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

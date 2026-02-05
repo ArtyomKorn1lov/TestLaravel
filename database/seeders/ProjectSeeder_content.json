@@ -1,0 +1,22 @@
+{
+    "items": [
+        {
+            "code": "project-1",
+            "name": "Smart Home Installation",
+            "picture": "smart-home.webp",
+            "is_primary": true
+        },
+        {
+            "code": "project-2",
+            "name": "Sparklite App",
+            "picture": "sparklite-app.webp",
+            "is_primary": false
+        },
+        {
+            "code": "project-3",
+            "name": "Car-Rapetition App",
+            "picture": "car-rapetition-app.webp",
+            "is_primary": false
+        }
+    ]
+}

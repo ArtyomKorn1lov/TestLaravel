@@ -1,0 +1,9 @@
+### POST api/contacts
+POST {{ url }}/api/feedback
+Content-Type: application/json
+
+{
+    "name": "Test",
+    "email": "test@mail.ru",
+    "message": "Новое сообщение"
+}

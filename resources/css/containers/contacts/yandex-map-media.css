@@ -1,0 +1,11 @@
+@media (max-width: 960px) {
+    .yandex-map {
+        height: 392px;
+    }
+}
+
+@media (max-width: 479px) {
+    .yandex-map {
+        height: 349px;
+    }
+}

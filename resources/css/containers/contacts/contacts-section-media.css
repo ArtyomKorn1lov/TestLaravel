@@ -1,0 +1,48 @@
+@media (max-width: 960px) {
+    .contacts {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contacts__section {
+        padding-bottom: 64px;        
+    }
+
+    .form__body + .form__submit {
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 568px) {
+    .contacts__form {
+        box-shadow: none;
+        background: transparent;
+    }
+}
+
+@media (max-width: 479px) {
+    .contacts__form {
+        padding: 36px;
+    }
+
+    .form .small-header {
+        margin-bottom: 31px;
+    }
+
+    .form__label {
+        margin-bottom: 2px;
+    }
+
+    .form__field {
+        padding: 14px 24px;
+    }
+
+    .form__submit {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .form__body + .form__submit {
+        margin-top: 46px;
+    }
+}

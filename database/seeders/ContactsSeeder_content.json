@@ -1,0 +1,39 @@
+{
+    "items": [
+        {
+            "code": "address",
+            "type": "address",
+            "label": "",
+            "value": "Id convallis placerat sit sed duis id amet volutpat quam a, pharetra.",
+            "show_footer": true
+        },
+        {
+            "code": "phone-first",
+            "type": "phone",
+            "label": "+7(908)-888-88-88",
+            "value": "+79088888888",
+            "show_footer": true
+        },
+        {
+            "code": "phone-second",
+            "type": "phone",
+            "label": "+7(908)-777-77-77",
+            "value": "+79077777777",
+            "show_footer": false
+        },
+        {
+            "code": "email",
+            "type": "email",
+            "label": "",
+            "value": "mail@mail.ru",
+            "show_footer": true
+        },
+        {
+            "code": "website",
+            "type": "website",
+            "label": "Yandex.ru",
+            "value": "https://ya.ru/",
+            "show_footer": false
+        }
+    ]
+}
